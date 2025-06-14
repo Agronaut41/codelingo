@@ -16,6 +16,4 @@ connectDB();
 
 app.use('/api/auth', authRoutes);
 
-app.listen(PORT, () => {
-    console.log(`Servidor rodando na porta ${PORT}`);
-});
+module.exports = app;
