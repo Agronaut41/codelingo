@@ -32,7 +32,6 @@ describe('Auth API', () => {
         password: 'senha123',
       });
 
-      console.log(res.statusCode, res.body)
     expect(res.statusCode).toBe(201);
     expect(res.body.message).toBe('Usuário registrado com sucesso');
   });
@@ -45,9 +44,6 @@ describe('Auth API', () => {
     const res = await request(app)
       .post(`${BASE_URL}/login`)
       .send({ name: 'usuario2', password: 'senha123' });
-
-      
-      console.log(res.statusCode, res)
 
     expect(res.statusCode).toBe(200);
     expect(res.body.token).toBeDefined();

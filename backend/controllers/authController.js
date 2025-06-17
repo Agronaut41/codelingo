@@ -21,7 +21,6 @@ exports.register = async (req, res) => {
 };
 
 exports.login = async (req, res) => {
-  try {
     const { name, password } = req.body;
 
     const user = await User.findOne({ name });
@@ -32,12 +31,7 @@ exports.login = async (req, res) => {
 
     const token = jwt.sign({ id: user._id, name: user.name }, JWT_SECRET, { expiresIn: '1h' });
 
-    return res.status(200).json({ message: 'Login bem-sucedido', token });
-
-  } catch (err) {
-    console.error('Erro no login:', err); // <--- importante no CI
-    return res.status(500).json({ message: 'Erro interno no login' });
-  }
+    res.status(200).json({ message: 'Login bem-sucedido', token });
 };
 
 exports.home = (req, res) => {
