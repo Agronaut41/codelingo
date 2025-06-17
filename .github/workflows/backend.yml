@@ -7,10 +7,15 @@ on:
   pull_request:
     paths:
       - 'backend/**'
+  workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      MONGODB_URI: mongodb://localhost:27017/testdb
+      GOOGLE_CLIENT_ID: dummy-client-id
+      GOOGLE_CLIENT_SECRET: dummy-client-secret
 
     services:
       mongodb:
