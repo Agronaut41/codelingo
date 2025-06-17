@@ -16,6 +16,7 @@ jobs:
       MONGODB_URI: mongodb://localhost:27017/testdb
       GOOGLE_CLIENT_ID: dummy-client-id
       GOOGLE_CLIENT_SECRET: dummy-client-secret
+      JWT_SECRET: testing-secret
 
     services:
       mongodb:
