@@ -47,7 +47,7 @@ describe('Auth API', () => {
       .send({ name: 'usuario2', password: 'senha123' });
 
       
-      console.log(res.statusCode, res.body)
+      console.log(res.statusCode, res)
 
     expect(res.statusCode).toBe(200);
     expect(res.body.token).toBeDefined();
